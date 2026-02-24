@@ -9,6 +9,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
       Title="Page3">
+    
     <Grid Margin="15">
 
 
@@ -24,7 +25,7 @@
 
 
         <StackPanel Orientation="Horizontal">
-
+            
 
             <TextBox x:Name="txtX0" Width="70" Margin="5" ToolTip="Начало x0"/>
 
@@ -33,7 +34,7 @@
             <TextBox x:Name="txtDx" Width="70" Margin="5" ToolTip="Шаг dx"/>
 
             <TextBox x:Name="txtB" Width="70" Margin="5" ToolTip="Параметр b"/>
-
+            
 
             <Button Content="Вычислить"
                     Width="120"
@@ -45,6 +46,7 @@
                     Width="120"
                     Margin="5"
                     Click="BtnClear_Click"/>
+            <Image Source="/Images/formula3.PNG"/>
 
         </StackPanel>
 
@@ -61,6 +63,7 @@
             <charts:Chart x:Name="Chart1"/>
 
         </wfi:WindowsFormsHost>
+        
 
 
     </Grid>
