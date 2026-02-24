@@ -5,10 +5,48 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:pr4_test.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="900"
       Title="Page2">
+    <StackPanel Margin="20">
 
-    <Grid>
-        
-    </Grid>
+
+        <Label Content="Введите X:"/>
+
+        <TextBox x:Name="txtX"/>
+
+
+        <TextBlock Text="Выберите функцию f(x):"
+                   Margin="10"/>
+
+
+        <RadioButton x:Name="rbSh" Content="sh(x)"/>
+
+        <RadioButton x:Name="rbX2" Content="x²"/>
+
+        <RadioButton x:Name="rbExp" Content="eˣ"/>
+
+
+        <Label Content="Результат:"/>
+
+        <TextBox x:Name="txtResult"
+                 IsReadOnly="True"
+                 Background="LightGray"/>
+
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+
+            <Button Content="Вычислить"
+                    Width="120"
+                    Margin="5"
+                    Click="BtnCalc_Click"/>
+
+            <Button Content="Очистить"
+                    Width="120"
+                    Margin="5"
+                    Click="BtnClear_Click"/>
+
+        </StackPanel>
+
+
+    </StackPanel>
 </Page>

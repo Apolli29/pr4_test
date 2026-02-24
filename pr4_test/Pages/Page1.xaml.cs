@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace pr4_test.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для Page1.xaml
-    /// </summary>
+    
     public partial class Page1 : Page
     {
         public Page1()

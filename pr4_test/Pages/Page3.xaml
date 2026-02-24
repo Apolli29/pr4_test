@@ -3,12 +3,65 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:charts="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+      xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
       xmlns:local="clr-namespace:pr4_test.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="900"
       Title="Page3">
+    <Grid Margin="15">
 
-    <Grid>
-        
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="150"/>
+
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Orientation="Horizontal">
+
+
+            <TextBox x:Name="txtX0" Width="70" Margin="5" ToolTip="Начало x0"/>
+
+            <TextBox x:Name="txtXk" Width="70" Margin="5" ToolTip="Конец xk"/>
+
+            <TextBox x:Name="txtDx" Width="70" Margin="5" ToolTip="Шаг dx"/>
+
+            <TextBox x:Name="txtB" Width="70" Margin="5" ToolTip="Параметр b"/>
+
+
+            <Button Content="Вычислить"
+                    Width="120"
+                    Margin="5"
+                    Click="BtnCalc_Click"/>
+
+
+            <Button Content="Очистить"
+                    Width="120"
+                    Margin="5"
+                    Click="BtnClear_Click"/>
+
+        </StackPanel>
+
+
+        <TextBox x:Name="txtOutput"
+                 Grid.Row="1"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Auto"
+                 IsReadOnly="True"/>
+
+
+        <wfi:WindowsFormsHost Grid.Row="2">
+
+            <charts:Chart x:Name="Chart1"/>
+
+        </wfi:WindowsFormsHost>
+
+
     </Grid>
 </Page>
