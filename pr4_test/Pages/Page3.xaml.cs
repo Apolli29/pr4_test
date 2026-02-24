@@ -111,14 +111,10 @@ namespace pr4_test.Pages
         {
 
             txtX0.Clear();
-
             txtXk.Clear();
             txtDx.Clear();
-
             txtB.Clear();
-
             txtOutput.Clear();
-
             Chart1.Series.First().Points.Clear();
 
         }
