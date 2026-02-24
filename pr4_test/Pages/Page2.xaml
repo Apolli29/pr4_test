@@ -9,6 +9,8 @@
       Title="Page2">
     <StackPanel Margin="20">
 
+        <Image Source="/Images/formula2.PNG" Height="99" Width="668"></Image>
+
 
         <Label Content="Введите X:"/>
 
