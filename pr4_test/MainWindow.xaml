@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr4_test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Практическая 4" Height="600" Width="900">
+    <DockPanel>
+
+
+        <StackPanel DockPanel.Dock="Top"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="10">
+
+
+            <Button Content="Страница 1"
+                    Width="120"
+                    Margin="5"
+                    Click="BtnPage1_Click"/>
+
+
+            <Button Content="Страница 2"
+                    Width="120"
+                    Margin="5"
+                    Click="BtnPage2_Click"/>
+
+
+            <Button Content="Страница 3"
+                    Width="120"
+                    Margin="5"
+                    Click="BtnPage3_Click"/>
+
+        </StackPanel>
+
+
+        <Frame x:Name="MainFrame"/>
+
+
+    </DockPanel>
+
 </Window>
+
