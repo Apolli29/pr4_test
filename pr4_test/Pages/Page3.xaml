@@ -24,33 +24,59 @@
         </Grid.RowDefinitions>
 
 
-        <StackPanel Orientation="Horizontal">
-            
+        <StackPanel Orientation="Horizontal" Margin="10">
 
-            <TextBox x:Name="txtX0" Width="70" Margin="5" ToolTip="Начало x0"/>
+            <StackPanel Margin="5">
+                <TextBlock Text="Начало отрезка x₀"
+                   HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtX0"
+                 Width="80"
+                 ToolTip="Введите начальное значение x₀"/>
+            </StackPanel>
 
-            <TextBox x:Name="txtXk" Width="70" Margin="5" ToolTip="Конец xk"/>
+            <StackPanel Margin="5">
+                <TextBlock Text="Конец отрезка xₖ"
+                   HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtXk"
+                 Width="80"
+                 ToolTip="Введите конечное значение xₖ"/>
+            </StackPanel>
 
-            <TextBox x:Name="txtDx" Width="70" Margin="5" ToolTip="Шаг dx"/>
+            <StackPanel Margin="5">
+                <TextBlock Text="Шаг dx"
+                   HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtDx"
+                 Width="80"
+                 ToolTip="Введите шаг изменения x"/>
+            </StackPanel>
 
-            <TextBox x:Name="txtB" Width="70" Margin="5" ToolTip="Параметр b"/>
-            
+            <StackPanel Margin="5">
+                <TextBlock Text="Параметр b"
+                   HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtB"
+                 Width="80"
+                 ToolTip="Введите значение параметра b"/>
+            </StackPanel>
 
-            <Button Content="Вычислить"
-                    Width="120"
-                    Margin="5"
-                    Click="BtnCalc_Click"/>
+            <StackPanel Margin="10,0,0,0">
+                <Button Content="Вычислить"
+                Width="120"
+                Margin="5"
+                Click="BtnCalc_Click"
+                ToolTip="Рассчитать значения функции"/>
 
-
-            <Button Content="Очистить"
-                    Width="120"
-                    Margin="5"
-                    Click="BtnClear_Click"/>
+                <Button Content="Очистить"
+                Width="120"
+                Margin="5"
+                Click="BtnClear_Click"
+                ToolTip="Очистить все поля"/>
+            </StackPanel>
             <Image Source="/Images/formula3.PNG"/>
 
         </StackPanel>
 
-        
+
+
 
         <TextBox x:Name="txtOutput"
                  Grid.Row="1"
