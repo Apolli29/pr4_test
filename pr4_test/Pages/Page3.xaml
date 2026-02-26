@@ -50,6 +50,7 @@
 
         </StackPanel>
 
+        
 
         <TextBox x:Name="txtOutput"
                  Grid.Row="1"
