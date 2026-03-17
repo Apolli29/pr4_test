@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace pr4_test.Pages
 {
-    
+
     public partial class Page2 : Page
     {
         public Page2()
@@ -36,8 +36,8 @@ namespace pr4_test.Pages
                 double result = Calculate(x, mode);
                 txtResult.Text = result.ToString("F4");
             }
-            catch (Exception ex) 
-            { 
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
@@ -63,13 +63,14 @@ namespace pr4_test.Pages
         /// </summary>
         public double Calculate(double x, int mode)
         {
-            switch (mode) {
+            switch (mode)
+            {
                 case 1: return Math.Sinh(x);
                 case 2: return x * x;
                 case 3: return Math.Exp(x);
                 default: throw new ArgumentException("Функция не выбрана");
+            }
         }
     }
-
 }
 
