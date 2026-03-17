@@ -29,12 +29,16 @@ y = 9(x+15√(x^3+b^3))
 ## Скриншоты
 - Страница 1
 <img width="687" height="456" alt="стр11" src="https://github.com/user-attachments/assets/8f5c3356-2e82-4c7f-a613-69359488666a" />
+
 - Страница 2
 <img width="671" height="453" alt="стр2" src="https://github.com/user-attachments/assets/0e9da9e9-0da9-4612-b7de-0126797bd6a3" />
+
 - Страница 3
 <img width="857" height="544" alt="стр3" src="https://github.com/user-attachments/assets/569466c0-3438-48a7-9800-da4a38a7893f" />
+
 - Выполненные тесты
 <img width="416" height="246" alt="test_done" src="https://github.com/user-attachments/assets/15b2377e-d50e-440c-aedb-0c21b3f223ce" />
+
 ### Вывод
 В ходе работы был выполнен рефакторинг кода WPF-приложения.
 Разработаны тесты для трех функций. Все тесты успешно пройдены.
