@@ -25,58 +25,20 @@ namespace pr4_test.Pages
         private void BtnCalc_Click(object sender, RoutedEventArgs e)
 
         {
-
-            if (!double.TryParse(txtX.Text, out double x) ||
-
-            !double.TryParse(txtY.Text, out double y) ||
-
-            !double.TryParse(txtZ.Text, out double z))
-
+            try
             {
+                double x = Convert.ToDouble(txtX.Text);
+                double y = Convert.ToDouble(txtY.Text);
+                double z = Convert.ToDouble(txtZ.Text);
 
-                MessageBox.Show("Введите корректные данные!");
+                double result = Calculate(x, y, z);
 
-                return;
-
+                txtResult.Text = result.ToString("F4");
             }
-
-
-            if (Math.Abs(x) > 1)
-
+            catch (Exception ex)
             {
-
-                MessageBox.Show("|x| должно быть ≤ 1 для arccos(x)");
-
-                return;
-
+                MessageBox.Show(ex.Message);
             }
-
-
-            double denominator = Math.Abs(x - y) * z + x * x;
-
-
-            if (denominator == 0)
-
-            {
-
-                MessageBox.Show("Знаменатель не может быть равен 0");
-
-                return;
-
-            }
-
-
-            double gamma =
-
-            5 * Math.Atan(x) -
-
-            0.25 * Math.Acos(x) *
-
-            ((x + 3 * Math.Abs(x - y) + x * x) / denominator);
-
-
-            txtResult.Text = gamma.ToString("F4");
-
         }
 
 
@@ -91,6 +53,20 @@ namespace pr4_test.Pages
             txtZ.Clear();
 
             txtResult.Clear();
+        }
+        /// <summary>
+        /// Вычисление
+        /// </summary>
+        public double Calculate(double x, double y, double z)
+        {
+            if (Math.Abs(x) > 1)
+                throw new ArgumentException("|x| должно быть <= 1");
+            double denominator = Math.Abs(x - y) * z + x * x;
+            if (denominator == 0)
+                throw new DivideByZeroException();
+
+            double gamma = 5 * Math.Atan(x) - 0.25 * Math.Acos(x) * ((x + 3 * Math.Abs(x - y) +x * x) / denominator);
+            return gamma;
         }
     }
 }

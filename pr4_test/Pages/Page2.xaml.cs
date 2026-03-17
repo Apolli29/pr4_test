@@ -25,46 +25,21 @@ namespace pr4_test.Pages
         private void BtnCalc_Click(object sender, RoutedEventArgs e)
 
         {
-
-            if (!double.TryParse(txtX.Text, out double x))
-
+            try
             {
+                double x = Convert.ToDouble(txtX.Text);
+                int mode = 0;
+                if (rbSh.IsChecked == true) mode = 1;
+                if (rbX2.IsChecked == true) mode = 2;
+                if (rbExp.IsChecked == true) mode = 3;
 
-                MessageBox.Show("Введите корректное число!");
-
-                return;
-
+                double result = Calculate(x, mode);
+                txtResult.Text = result.ToString("F4");
             }
-
-
-            double fx = 0;
-
-
-            if (rbSh.IsChecked == true)
-
-                fx = Math.Sinh(x);
-
-            else if (rbX2.IsChecked == true)
-
-                fx = x * x;
-
-            else if (rbExp.IsChecked == true)
-
-                fx = Math.Exp(x);
-
-            else
-
-            {
-
-                MessageBox.Show("Выберите функцию!");
-
-                return;
-
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.Message);
             }
-
-
-            txtResult.Text = fx.ToString("F4");
-
         }
 
 
@@ -83,7 +58,17 @@ namespace pr4_test.Pages
             rbExp.IsChecked = false;
 
         }
-
+        /// <summary>
+        /// Вычисление
+        /// </summary>
+        public double Calculate(double x, int mode)
+        {
+            switch (mode) {
+                case 1: return Math.Sinh(x);
+                case 2: return x * x;
+                case 3: return Math.Exp(x);
+                default: throw new ArgumentException("Функция не выбрана");
+        }
     }
 
 }

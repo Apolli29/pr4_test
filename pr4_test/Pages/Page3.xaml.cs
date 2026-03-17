@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 
 namespace pr4_test.Pages
 {
-    
+
     public partial class Page3 : Page
     {
         public Page3()
@@ -94,7 +94,7 @@ namespace pr4_test.Pages
                 }
 
 
-                double y = 9 * (x + 15 * Math.Sqrt(underRoot));
+                double y = Calculate(x, b);
 
 
                 txtOutput.AppendText($"x={x:F2} y={y:F4}\n");
@@ -118,7 +118,16 @@ namespace pr4_test.Pages
             Chart1.Series.First().Points.Clear();
 
         }
-
+        /// <summary>
+        /// Вычисление
+        /// </summary>
+        public double Calculate(double x, double b)
+        {
+            double underRoot = Math.Pow(x, 3) + Math.Pow(b, 3);
+            if (underRoot < 0)
+                throw new ArgumentException("Подкоренное выражение < 0");
+            return 9 * (x + 15 * Math.Sqrt(underRoot));
+        }
     }
-
 }
+
